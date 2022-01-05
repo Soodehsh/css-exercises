@@ -1,0 +1,103 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background: #010101;
+}
+
+input {
+  display: none;
+}
+
+label {
+  display: inline-block;
+  width: 60px;
+  height: 60px;
+  background: #171923;
+  border-bottom-right-radius: 10px;
+  border-top-right-radius: 10px;
+  margin: 5px 0;
+  text-align: center;
+  cursor: pointer;
+}
+
+.bars {
+  font-size: 22px;
+  text-align: center;
+  margin-top: 17px;
+  color: #c31331;
+  transition: transform 1s;
+}
+
+.menu ul {
+  list-style-type: none;
+  width: 60px;
+  height: 300px;
+  position: absolute;
+}
+
+.menu ul li {
+  width: 0px;
+  height: 60px;
+  background: #171923;
+  margin-left: 0px;
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom-right-radius: 10px;
+  border-top-right-radius: 10px;
+  cursor: pointer;
+  transform: translateX(-20px);
+}
+
+.menu ul li svg path {
+  font-size: 22px;
+  color: #c31331;
+  transition: 0.5s;
+}
+.menu ul li:hover svg path {
+  transform: scale(1.2);
+}
+
+input:checked ~ .menu ul li {
+  animation: w 2s 1 forwards;
+  transform: translateX(0);
+}
+
+input:checked ~ .menu .bars {
+  transform: rotate(1turn);
+}
+
+@keyframes w {
+  0% {
+    width: 0%;
+  }
+  50% {
+    width: 120px;
+  }
+  100% {
+    width: 60px;
+  }
+}
+
+input:checked ~ .menu ul li:nth-child(2) {
+  transition-delay: 0.4s;
+  animation-delay: 0.4s;
+}
+
+input:checked ~ .menu ul li:nth-child(3) {
+  transition-delay: 0.8s;
+  animation-delay: 0.8s;
+}
+
+input:checked ~ .menu ul li:nth-child(4) {
+  transition-delay: 1.2s;
+  animation-delay: 1.2s;
+}
+input:checked ~ .menu ul li:nth-child(5) {
+  transition-delay: 1.6s;
+  animation-delay: 1.6s;
+}
